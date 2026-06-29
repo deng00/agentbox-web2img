@@ -1,0 +1,8 @@
+node_modules
+npm-debug.log
+.git
+.github
+*.png
+*.png.bak
+Downloads
+.DS_Store
