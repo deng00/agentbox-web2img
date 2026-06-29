@@ -29,8 +29,13 @@ docker run -it --rm \
 
 ## 发布
 
-GitHub Actions(`.github/workflows/docker-publish.yml`)在 push 到 `main` 或打 `v*` tag 时,
-构建 `linux/amd64,arm64` 多架构镜像并推到 Docker Hub。
+仅在 **main 分支上打 `v*` tag**(如 `v0.1.0`)时触发:GitHub Actions
+(`.github/workflows/docker-publish.yml`)构建 `linux/amd64,arm64` 多架构镜像并推到 Docker Hub,
+只发两个 tag —— 完整版本号(`0.1.0`)和 `latest`。
+
+```bash
+git tag v0.1.1 && git push origin v0.1.1
+```
 
 需要在仓库配置 Secret:`DOCKERHUB_USERNAME`、`DOCKERHUB_TOKEN`。
 可选 Variable:`IMAGE_NAME`(默认 `<用户名>/agentbox-web2img`)、`CLAUDE_CODE_VERSION`。
