@@ -41,7 +41,8 @@ ENV DEBIAN_FRONTEND=noninteractive \
 # 字体兜底 + 常用工具（对齐 cs-agent-docker base 的基础工具集）
 #   fonts-noto-cjk*       : 中日韩兜底，防豆腐块
 #   fonts-liberation2/dejavu : Arial/Times/Helvetica 替身（guizang 瑞士风用到 Helvetica）
-#   xz-utils / pngquant   : 解压 .tar.xz、压缩 PNG（都是实测里"想用却没有"的）
+#   xz-utils              : 解压 .tar.xz
+#   pngquant / optipng    : PNG 压缩 —— pngquant 有损调色板(压得狠)、optipng 无损优化
 RUN apt-get update && apt-get install -y --no-install-recommends \
         ca-certificates \
         curl \
@@ -52,6 +53,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         tree \
         xz-utils \
         pngquant \
+        optipng \
         fonts-noto-cjk \
         fonts-noto-cjk-extra \
         fonts-noto-color-emoji \

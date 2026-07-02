@@ -15,7 +15,8 @@ skill（如 [ljg-card](https://github.com/lijigang/ljg-skills)、
   - 模板用到的 Google/Web 字体烤入镜像(DM Serif Display / DM Sans / Playfair Display / Inter / Caveat / JetBrains Mono / Kalam / Permanent Marker / Ma Shan Zheng / ZCOOL QingKe HuangYou)
   - fontconfig 别名把 `Noto Serif/Sans SC`、`PingFang SC` 映射到已装的 Noto CJK
   - → **离线也能按设计渲染**,不必空等 `@import` 外网(消除 networkidle 超时)
-- 常用工具:`git` `curl` `jq` `ripgrep` `tree` `xz-utils` `pngquant`
+- 常用工具:`git` `curl` `jq` `ripgrep` `tree` `xz-utils`
+- PNG 压缩:`pngquant`(有损调色板,压得狠) + `optipng`(无损优化)
 - 京華老宋体(KingHwa_OldSong)非 Google Fonts,默认不装;需要时构建传 `--build-arg KINGHWA_TTF_URL=<直链>`
 
 ## 使用
